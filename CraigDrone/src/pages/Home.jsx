@@ -16,9 +16,7 @@ const Home = () => {
         <>
 
             <div className="videoContainer">
-                <video id='videoPlayer' autoPlay loop muted >
-                    <source src={video} type="video/mp4" />
-                </video>
+                
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>
                     <p id="topSubText">For your personal or business needs in WA.</p>
@@ -67,6 +65,10 @@ const Home = () => {
                     Elevate your work with our drone photography and videography services. Give us a call to get an instant quote and timeline.
                 </p> 
 
+            </div>
+
+            <div id="ContactSection">
+                textwoordws he ewsjfgbs
             </div>
 
             <footer>
