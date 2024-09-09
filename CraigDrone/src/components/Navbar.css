@@ -26,6 +26,10 @@ body {
 .logo {
 }
 
+.fa-bars {
+  color: black;
+}
+
 .menu-icon {
   display: none;
 }
