@@ -13,25 +13,6 @@ const Navbar = () => {
     setShowNavbar(!showNavbar)
   }
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-
-  const navigate = useNavigate();
-  // method to jump to the desired element by using the element's id
-  const jumpToReleventDiv = async (id) => {
-    navigate("/");
-    console.log(id);
-
-    await sleep(1000);
-
-
-    const releventDiv = document.getElementById("ContactSection");
-    // behavior: "smooth" parameter for smooth movement
-    releventDiv.scrollIntoView({ behavior: "smooth" });
-  }
-
   return (
     <nav className="navbar">
       <div className="container">
@@ -52,8 +33,8 @@ const Navbar = () => {
             <li>
               <NavLink to="/Portfolio">Portfolio</NavLink>
             </li>
-            <li to="/" style={{ color: "black" }} className='CustomContactButton' onClick={() => jumpToReleventDiv("ContactSection")}>
-              Contact
+            <li>
+            <NavLink to="/Contact">Contact</NavLink>
             </li>
           </ul>
         </div>

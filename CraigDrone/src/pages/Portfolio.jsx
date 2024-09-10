@@ -1,9 +1,22 @@
+import PortfolioComponent from "../components/PortfolioComponent";
+import "./Portfolio.css"
+
 const Portfolio = () => {
     return (
       <>
-      
-        <h1>Portfolio Page</h1>
-        
+      <div className="PortfolioHeader">
+      <h1 >
+        Portfolio
+      </h1>
+      </div>
+        <div className="portfolioCardContainer">
+          <PortfolioComponent/>
+          <PortfolioComponent/>
+          <PortfolioComponent/>
+          <PortfolioComponent/>
+        </div> 
+
+
       </>
     )
 };

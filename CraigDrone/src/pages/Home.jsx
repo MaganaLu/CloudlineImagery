@@ -16,6 +16,9 @@ const Home = () => {
         <>
 
             <div className="videoContainer">
+            <video id='videoPlayer' autoPlay loop muted >
+                    <source src={video} type="video/mp4" />
+                </video>
                 
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>
