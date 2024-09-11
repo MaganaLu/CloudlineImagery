@@ -1,7 +1,7 @@
 .portfolioCardContainer{
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    
 }
 
 .PortfolioHeader{

@@ -1,0 +1,8 @@
+.ServicesContainer{
+    text-align: center;
+}
+
+.ServicesCardContainer{
+    display:flex;
+    flex-wrap: wrap;
+}

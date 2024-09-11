@@ -6,6 +6,7 @@ import Carousel from 'react-multi-carousel';
 import FlowChart from '../assets/FlowChart.svg';
 
 import HomeCarousel from '../components/HomeCarousel';
+import ContactForm from '../components/ContactForm';
 
 
 import './Home.css';
@@ -71,7 +72,7 @@ const Home = () => {
             </div>
 
             <div id="ContactSection">
-                textwoordws he ewsjfgbs
+                <ContactForm/>
             </div>
 
 

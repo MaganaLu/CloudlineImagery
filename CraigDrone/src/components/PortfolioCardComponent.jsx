@@ -1,6 +1,6 @@
-import './PortfolioComponent.css'
+import './PortfolioCardComponent.css'
 
-const PortfolioComponent = (props) => {
+const PortfolioCardComponent = (props) => {
 
     return (
         <div class="center">
@@ -15,4 +15,4 @@ const PortfolioComponent = (props) => {
     )
 }
 
-export default PortfolioComponent;
+export default PortfolioCardComponent;
