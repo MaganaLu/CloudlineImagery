@@ -1,13 +1,13 @@
 import './PortfolioComponent.css'
 
-const PortfolioComponent = () => {
+const PortfolioComponent = (props) => {
 
     return (
         <div class="center">
             <div class="article-card">
                 <div class="content">
-                    <p class="date">Jan 1, 2022</p>
-                    <p class="title">Article Title Goes Here</p>
+                    <p class="date">{props.date}</p>
+                    <p class="title">{props.title}</p>
                 </div>
                 <img src="https://placehold.co/9000x400" alt="article-cover" />
             </div>

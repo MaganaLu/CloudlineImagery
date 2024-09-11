@@ -25,6 +25,25 @@ const App = () => {
                <Route path='/Services' element={<Services/>} />
             </Routes>
          </div>
+
+         <footer>
+                <h3>
+                    Drone Company
+                </h3>
+                <h4>
+                    Contact us now!
+                </h4>
+                <h4>
+                    Email here
+                </h4>
+                <h4>
+                    Phone number here
+                </h4>
+                <h4>
+                    maybe: social media
+                </h4>
+            </footer>
+
        </Router>
     );
 }

@@ -1,11 +1,15 @@
+
+import './Services.css'
+
+import PageHeader from '../components/PageHeader';
+
 const Services = () => {
-    return (
-      <>
-      
-        <h1>Services Page</h1>
-        
-      </>
-    )
+  return (
+    <>
+    <PageHeader hText="Services"/>
+
+    </>
+  )
 };
-  
+
 export default Services
