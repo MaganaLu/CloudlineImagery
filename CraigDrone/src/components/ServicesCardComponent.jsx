@@ -1,5 +1,4 @@
 import './ServicesCardComponent.css'
-import NatureImage from '../assets/NatureImage.jpg'
 
 const ServicesCardComponent = () => {
     return (

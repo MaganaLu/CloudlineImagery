@@ -1,8 +1,7 @@
-import { useState, useEffect  } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import placeholderLogo from '../assets/placeholderLogo.png'
+import { useState, useEffect  } from 'react';
+import { NavLink } from 'react-router-dom';
+import placeholderLogo from '../assets/placeholderLogo.png';
+import HamburgerMenu from '../assets/HamburgerMenu.svg';
 
 import './Navbar.css'
 
@@ -20,7 +19,7 @@ const Navbar = () => {
           <img src={placeholderLogo} />
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
-          <FontAwesomeIcon icon={faBars} />
+          <img style={{height:"50px", width:"25px"}} src={HamburgerMenu} alt="menu"/>
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>

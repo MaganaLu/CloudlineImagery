@@ -1,6 +1,5 @@
 import PortfolioCardComponent from "../components/PortfolioCardComponent";
 import PageHeader from "../components/PageHeader";
-import NatureImage from "../assets/NatureImage.jpg";
 import "./Portfolio.css";
 
 const Portfolio = () => {

@@ -1,8 +1,5 @@
-import video from '../assets/videos/Test1.mp4';
-import bnwWaves from '../assets/black_white_waves.svg';
+import video from '../assets/videos/Test1.webm';
 import colorWaves from '../assets/colorWaves.svg';
-import DroneAnimation from '../components/DroneAnimation';
-import Carousel from 'react-multi-carousel';
 import FlowChart from '../assets/FlowChart.svg';
 
 import HomeCarousel from '../components/HomeCarousel';
@@ -24,8 +21,9 @@ const Home = () => {
         <>
 
             <div className="videoContainer">
+
                 <video id='videoPlayer' autoPlay loop muted >
-                    <source src={video} type="video/mp4" />
+                    <source src={video} type="video/webm" />
                 </video>
 
                 <div className="overlayText">
