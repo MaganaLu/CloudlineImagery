@@ -7,23 +7,35 @@ const TestPage = () => {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
+        let ignore = false; 
+
+        const getTodos = async () => {
+            setTodos([]);
+            await getDocs(collection(db, "portfolio_entries"))
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        if(!ignore){
+                        setTodos(todos => [...todos, doc.data()])
+                        }
+                    })
+                    console.log("stuff",todos)
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
+        }
+
         getTodos();
 
-        console.log('i fire once');
-    }, [todos])
+        return () => {
+            console.log('i fire once');
+            ignore = true;
+        };
 
-    const getTodos = async () => {
-        await getDocs(collection(db, "portfolio_entries"))
-            .then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                    setTodos(todos => [...todos, doc.data()])
-                })
-                console.log("stuff",todos)
-            })
-            .catch(err => {
-                console.log(err.message)
-            })
-    }
+        
+    }, [])
+
+
 
     // const querySnapshot = await getDocs(collection(db, "users"));
     // querySnapshot.forEach((doc) => {
@@ -32,17 +44,17 @@ const TestPage = () => {
 
     return (
         <>
-            <h1>words</h1>
+            
             { todos.map(todo =>
-            <>
-                <h1 key={todo.title}>{todo.title}</h1>
-                <h1 key={todo.description}>{todo.description}</h1>
+            <ul key={todo.title}>
+                <h1>{todo.title}</h1>
+                <h1>{todo.description}</h1>
                 <img src={todo.image} />
-                <video key={todo.video} id='videoPlayer' autoPlay loop muted >
+                <video id='videoPlayer' autoPlay loop muted >
                     <source src={todo.video} type="video/mp4" />
                 </video>
                 
-            </>
+            </ul>
             )}
         </>
     )
