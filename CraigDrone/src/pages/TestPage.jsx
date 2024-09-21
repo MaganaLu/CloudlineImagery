@@ -1,5 +1,5 @@
 import { collection, DocumentSnapshot, getDocs } from "firebase/firestore";
-import db from '../Firebase/Configuration';
+import db from '../Firebase/Configuration.jsx';
 import React, { useState, useEffect } from "react";
 import PortfolioCardComponent from "../components/PortfolioCardComponent";
 
