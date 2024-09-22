@@ -5,8 +5,11 @@ import FlowChart from '../assets/FlowChart.svg';
 import HomeCarousel from '../components/HomeCarousel';
 import ContactForm from '../components/ContactForm';
 
-import React from 'react';
 import { useNavigate } from "react-router-dom";
+
+import { collection, DocumentSnapshot, getDocs } from "firebase/firestore";
+import db from '../Firebase/Configuration.jsx';
+import React, { useState, useEffect } from "react";
 
 
 import './Home.css';
@@ -17,14 +20,46 @@ const Home = () => {
     const navigate = useNavigate();
     const handleGoToContact = () => navigate("/Contact");
 
+    const [todos, setTodos] = useState([]);
+
+    useEffect(() => {
+        let ignore = false;
+
+        const getTodos = async () => {
+            setTodos([]);
+            await getDocs(collection(db, "main_page_main_video"))
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        if (!ignore) {
+                            setTodos(todos => [...todos, doc.data()])
+                        }
+                    })
+                    console.log("stuff", todos)
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
+        }
+
+        getTodos();
+
+        return () => {
+            console.log('i fire once');
+            ignore = true;
+        };
+
+
+    }, [])
+
     return (
         <>
 
             <div className="videoContainer">
-
-                <video id='videoPlayer' autoPlay loop muted >
-                    <source src={video} type="video/webm" />
-                </video>
+                {todos.map(todo =>
+                    <video id='videoPlayer' autoPlay loop muted >
+                        <source src={todo.video} type="video/mp4" />
+                    </video>
+                )}
 
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>

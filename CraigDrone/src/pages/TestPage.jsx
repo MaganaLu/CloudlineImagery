@@ -36,14 +36,49 @@ const TestPage = () => {
 
     }, [])
 
+    /*
+  const [portfolioEntries, setPortfolioEntries] = useState([]);
+
+  useEffect(() => {
+    let ignore = false;
+
+    const getPortfolioEntries = async () => {
+      setPortfolioEntries([]);
+      const collection_ref = collection(db, "portfolio_entries")
+      const q = query(collection_ref, where("type", "==", "Golf Courses"))
+
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.size === 1) {
+        querySnapshot.forEach((doc) => {
+
+          setPortfolioEntries(portfolioEntries => [...portfolioEntries, doc.data()])
+        });
+      } else {
+        console.log('Document not found or multiple documents found.');
+      }
+    
+  }
+
+    getPortfolioEntries();
+
+  return () => {
+    console.log('i fire once');
+    ignore = true;
+  };
+
+
+}, [])
+    */
+
     return (
         <>
 
             {todos.map(todo =>
-                
+
 
                 <ul key={todo.title}>
-                    <PortfolioCardComponent title = {todo.title} date = {todo.date} image={todo.image}/>
+                    <PortfolioCardComponent title={todo.title} date={todo.date} image={todo.image} />
 
                 </ul>
             )}

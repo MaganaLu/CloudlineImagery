@@ -1,19 +1,17 @@
 import './ServicesCardComponent.css'
 
-const ServicesCardComponent = () => {
+const ServicesCardComponent = (props) => {
     return (
         <>
             <section class="articles">
                 <article>
                     <div class="article-wrapper">
                         <figure>
-                            <img src="https://picsum.photos/id/1011/800/450" alt="" />
+                            <img src={props.image} alt="image" />
                         </figure>
                         <div class="article-body">
-                            <h2>This is some title</h2>
-                            <p style={{color:"black"}}>
-                                Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-                            </p>
+                            <h2>{props.title}</h2>
+                            <p style={{color:"black"}}>{props.subtext}</p>
                         </div>
                     </div>
                 </article>

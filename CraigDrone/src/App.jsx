@@ -11,7 +11,6 @@ import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Services from './pages/Services.jsx';
-import TestPage from './pages/TestPage.jsx';
 
 
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
                <Route path='/Contact' element={<Contact/>} />
                <Route path='/Portfolio' element={<Portfolio/>} />
                <Route path='/Services' element={<Services/>} />
-               <Route path='/TestPage' element={<TestPage/>} />
             </Routes>
          </div>
 

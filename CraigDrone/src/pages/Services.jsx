@@ -1,5 +1,8 @@
 
-import './Services.css'
+import './Services.css';
+import { collection, DocumentSnapshot, getDocs } from "firebase/firestore";
+import db from '../Firebase/Configuration.jsx';
+import React, { useState, useEffect } from "react";
 
 import PageHeader from '../components/PageHeader';
 import ServicesCardComponent from '../components/ServicesCardComponent';
@@ -9,6 +12,38 @@ import { useNavigate } from "react-router-dom";
 const Services = () => {
   const navigate = useNavigate();
   const handleGoToContact = () => navigate("/Contact");
+
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+      let ignore = false;
+
+      const getServices = async () => {
+        setServices([]);
+          await getDocs(collection(db, "services"))
+              .then(querySnapshot => {
+                  querySnapshot.forEach(doc => {
+                      if (!ignore) {
+                        setServices(services => [...services, doc.data()])
+                      }
+                  })
+                  console.log("stuff", services)
+              })
+              .catch(err => {
+                  console.log(err.message)
+              })
+      }
+
+      getServices();
+
+      return () => {
+          console.log('i fire once');
+          ignore = true;
+      };
+
+
+  }, [])
+
 
   return (
     <>
@@ -22,10 +57,15 @@ const Services = () => {
       </div>
 
       <div className='ServicesCardContainer'>
-        <ServicesCardComponent />
-        <ServicesCardComponent />
-        <ServicesCardComponent />
-        <ServicesCardComponent />
+        
+        {services.map(service =>
+                
+
+                <ul key={service.title}>
+                    <ServicesCardComponent title = {service.title} subtext={service.subtext} image={service.image}/>
+
+                </ul>
+            )}
       </div>
 
     </>
