@@ -7,7 +7,7 @@ const ServicesCardComponent = (props) => {
                 <article>
                     <div class="article-wrapper">
                         <figure>
-                            <img src={props.image} alt="image" />
+                            <img crossOrigin="anonymous" src={props.image} alt="image" />
                         </figure>
                         <div class="article-body">
                             <h2>{props.title}</h2>

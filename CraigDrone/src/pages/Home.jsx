@@ -27,7 +27,7 @@ const Home = () => {
 
         const getTodos = async () => {
             setTodos([]);
-            await getDocs(collection(db, "main_page_main_video"))
+            await getDocs(collection(db, "home_page"))
                 .then(querySnapshot => {
                     querySnapshot.forEach(doc => {
                         if (!ignore) {
@@ -53,13 +53,10 @@ const Home = () => {
 
     return (
         <>
-
             <div className="videoContainer">
-                {todos.map(todo =>
                     <video id='videoPlayer' autoPlay loop muted >
-                        <source src={todo.video} type="video/mp4" />
+                        <source src={video} type="video/mp4" />
                     </video>
-                )}
 
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>

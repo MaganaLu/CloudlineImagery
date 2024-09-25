@@ -12,10 +12,29 @@ const PortfolioCardComponent = (props) => {
                     <p class="title">{props.title}</p>
                 </div>
 
-                <video id='portfolioVideoPlayer' autoPlay loop muted >
+                {/*<video  id='portfolioVideoPlayer' autoPlay loop muted >
                     <source src={props.video} type="video/webm" />
                 </video>
+
+                                    <object
+                    data={props.video} 
+                    type="text/html"
+                    width="640"
+                    height="360"
+                    autoPlay={true}
+                    id='portfolioVideoPlayer'>
+
+                    <param name="loop" value="true"></param>
+                    <param name="autoplay" value="true"></param>
+                </object>
+
+
                 
+*/}
+
+
+                <iframe id='portfolioVideoPlayer' src={(props.video)} frameBorder="0" allowFullScreen allow="autoplay; loop;" ></iframe>
+
             </div>
         </div>
     )

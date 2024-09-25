@@ -32,6 +32,12 @@ article {
     padding: 0;
     overflow: hidden;
   }
+
+  iframe {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
   
   article img {
     width: 100vw;
@@ -114,6 +120,10 @@ article {
       overflow: hidden;
     }
     figure img {
+      height: 100%;
+      object-fit: cover;
+    }
+    figure iframe {
       height: 100%;
       object-fit: cover;
     }

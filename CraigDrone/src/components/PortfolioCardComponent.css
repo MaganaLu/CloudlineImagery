@@ -51,7 +51,7 @@
   position: absolute;
   padding: 30px 20px 20px 20px;
   height: auto;
-  bottom: 0;
+  top: 0;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
   z-index: 1;
 }
