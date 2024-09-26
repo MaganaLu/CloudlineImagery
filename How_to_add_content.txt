@@ -8,6 +8,8 @@ to add iimages or  videos from google drive:
 cloud storage:
 using bunnycdn.
 
+free image hosting: 
+https://postimages.org/
 
 TODO: 
 add firebase rules 

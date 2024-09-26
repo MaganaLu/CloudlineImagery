@@ -57,7 +57,7 @@ const Portfolio = () => {
       <h1>Golf Courses</h1>
       <div className="portfolioCardContainer">
         {golfCourseEntries.map(portfolioEntry =>
-          <ul key={portfolioEntry.title}>
+          <ul key={portfolioEntry.title} className="ulPortfolio">
             <PortfolioCardComponent video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
         )}
@@ -66,7 +66,7 @@ const Portfolio = () => {
       <h1>Real Estate</h1>
       <div className="portfolioCardContainer">
         {realEstateEntries.map(portfolioEntry =>
-          <ul key={portfolioEntry.title}>
+          <ul key={portfolioEntry.title}  className="ulPortfolio">
             <PortfolioCardComponent video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
         )}

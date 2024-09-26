@@ -3,6 +3,9 @@
     flex-wrap: wrap;
     
 }
+.ulPortfolio{
+    padding: 10px;
+}
 
 .PortfolioHeader{
     height: fit-content;

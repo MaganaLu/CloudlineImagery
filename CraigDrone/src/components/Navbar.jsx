@@ -18,9 +18,7 @@ const Navbar = () => {
       <div className="container">
         <div className="logo">
           <img src={droneLog} />
-          
         </div>
-        <p>craig drones</p>
         <div className="menu-icon" onClick={handleShowNavbar}>
           <img style={{height:"50px", width:"25px"}} src={HamburgerMenu} alt="menu"/>
         </div>

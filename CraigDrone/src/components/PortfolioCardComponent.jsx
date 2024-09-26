@@ -33,7 +33,7 @@ const PortfolioCardComponent = (props) => {
 */}
 
 
-                <iframe id='portfolioVideoPlayer' src={props.video} frameBorder="0" allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>
+                <iframe id='portfolioVideoPlayer' src={props.video} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>
 
                 
 
