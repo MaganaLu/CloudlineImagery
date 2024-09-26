@@ -55,7 +55,7 @@ const Home = () => {
         <>
             <div className="videoContainer">
                     <video id='videoPlayer' autoPlay loop muted >
-                        <source src={video} type="video/mp4" />
+                        <source src={video} type="video/webm" />
                     </video>
 
                 <div className="overlayText">

@@ -3,3 +3,7 @@ to add iimages or  videos from google drive:
 2. go to https://www.labnol.org/embed/google/drive/ and generate embeded link 
 3. copy direct image link
 4. add link to fireCMS software in entry you want  
+
+
+cloud storage:
+using bunnycdn

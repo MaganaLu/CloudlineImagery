@@ -24,27 +24,21 @@ const Portfolio = () => {
       const golfCoursesQuerySnapshot = await getDocs(golfCoursesQuery);
       const realEstateQuerySnapshot = await getDocs(realEstateQuery);
 
-      if (golfCoursesQuerySnapshot.size === 1) {
-        golfCoursesQuerySnapshot.forEach((doc) => {
-          if (!ignore) {
-            setGolfCourseEntries(golfCourseEntries => [...golfCourseEntries, doc.data()]);
-          }
-        });
-      } else {
-        console.log('Document not found or multiple documents found.');
-      }
+      golfCoursesQuerySnapshot.forEach((doc) => {
+        if (!ignore) {
+          setGolfCourseEntries(golfCourseEntries => [...golfCourseEntries, doc.data()]);
+        }
+      });
 
-      if (realEstateQuerySnapshot.size === 1) {
-        realEstateQuerySnapshot.forEach((doc) => {
-          if (!ignore) {
-            setRealEstateEntries(realEstateEntries => [...realEstateEntries, doc.data()]);
-          }
-        });
-      } else {
-        console.log('Document not found or multiple documents found.');
-      }
 
-      
+      realEstateQuerySnapshot.forEach((doc) => {
+        if (!ignore) {
+          setRealEstateEntries(realEstateEntries => [...realEstateEntries, doc.data()]);
+        }
+      });
+
+
+
     }
 
     getGolfCourseEntries();
@@ -70,7 +64,7 @@ const Portfolio = () => {
       </div>
 
       <h1>Real Estate</h1>
-      <div className="portfolioCardContainer">   
+      <div className="portfolioCardContainer">
         {realEstateEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title}>
             <PortfolioCardComponent video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
