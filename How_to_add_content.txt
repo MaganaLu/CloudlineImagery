@@ -6,4 +6,4 @@ to add iimages or  videos from google drive:
 
 
 cloud storage:
-using bunnycdn
+using bunnycdn.
