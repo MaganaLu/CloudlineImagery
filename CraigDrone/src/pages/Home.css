@@ -116,8 +116,6 @@ Button:hover {
 }
 
 .OneStopContainer{
-    background-color: white;
-    color: black;
     text-align: center;
     position: flex;
     padding-left: 50px;
