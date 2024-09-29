@@ -27,7 +27,7 @@
   transition: all 300ms;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1600px) {
   .article-card {
     width: calc(100vw - 20px);
   }

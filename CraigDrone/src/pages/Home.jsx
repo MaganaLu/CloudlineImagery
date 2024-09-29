@@ -1,4 +1,4 @@
-import video from '../assets/videos/Test1.webm';
+import video from '../assets/videos/Hole_18.webm';
 import colorWaves from '../assets/colorWaves.svg';
 import FlowChart from '../assets/FlowChart.svg';
 

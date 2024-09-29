@@ -13,33 +13,42 @@ const Services = () => {
   const navigate = useNavigate();
   const handleGoToContact = () => navigate("/Contact");
 
+  //const handleGoToPortfolioSection = () => navigate("/Portfolio");
+
+  const navigateToPortfolioSection = (title) => {
+    title= (title).replaceAll(" ", "-")
+    navigate("/Portfolio/#" + title);
+  }
+
+
+
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-      let ignore = false;
+    let ignore = false;
 
-      const getServices = async () => {
-        setServices([]);
-          await getDocs(collection(db, "services"))
-              .then(querySnapshot => {
-                  querySnapshot.forEach(doc => {
-                      if (!ignore) {
-                        setServices(services => [...services, doc.data()])
-                      }
-                  })
-                  console.log("stuff", services)
-              })
-              .catch(err => {
-                  console.log(err.message)
-              })
-      }
+    const getServices = async () => {
+      setServices([]);
+      await getDocs(collection(db, "services"))
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            if (!ignore) {
+              setServices(services => [...services, doc.data()])
+            }
+          })
+          console.log("stuff", services)
+        })
+        .catch(err => {
+          console.log(err.message)
+        })
+    }
 
-      getServices();
+    getServices();
 
-      return () => {
-          console.log('i fire once');
-          ignore = true;
-      };
+    return () => {
+      console.log('i fire once');
+      ignore = true;
+    };
 
 
   }, [])
@@ -57,15 +66,13 @@ const Services = () => {
       </div>
 
       <div className='ServicesCardContainer'>
-        
+
         {services.map(service =>
-                
+          <ul onClick={() => navigateToPortfolioSection(service.title)} key={service.title}>
+            <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.image} />
 
-                <ul key={service.title}>
-                    <ServicesCardComponent title = {service.title} subtext={service.subtext} image={service.image}/>
-
-                </ul>
-            )}
+          </ul>
+        )}
       </div>
 
     </>

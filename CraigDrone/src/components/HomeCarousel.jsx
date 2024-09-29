@@ -1,7 +1,11 @@
-import React from "react";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./HomeCarousel.css";
+
+import { collection, DocumentSnapshot, getDocs } from "firebase/firestore";
+import db from '../Firebase/Configuration.jsx';
+import React, { useState, useEffect } from "react";
 
 const responsive = {
   desktop: {
@@ -55,7 +59,41 @@ const sliderImageUrl = [
 ];
 
 
+
+
 const HomeCarousel = () => {
+
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+      let ignore = false;
+
+      const getImages = async () => {
+        setImages([]);
+          await getDocs(collection(db, "home_page"))
+              .then(querySnapshot => {
+                  querySnapshot.forEach(doc => {
+                      if (!ignore) {
+                        setImages(images => [...images, doc.data()])
+                      }
+                  })
+                  console.log("stuff", images)
+              })
+              .catch(err => {
+                  console.log(err.message)
+              })
+      }
+
+      getImages();
+
+      return () => {
+          console.log('i fire once');
+          ignore = true;
+      };
+
+
+  }, [])
+
   return (
     <div className="parentContainer">
       <Carousel
@@ -68,12 +106,12 @@ const HomeCarousel = () => {
         partialVisible={false}
         dotListClass="custom-dot-list-style"
       >
-        {sliderImageUrl.map((imageUrl, index) => {
+        {images.map((imageEntry) => {
           return (
-            <div className="slider" key={index}>
-              <img src={imageUrl.url} alt="image" />
-              <h1 className="cHText">{imageUrl.bigText}</h1>
-              <p className="cPText">{imageUrl.smallText}</p>
+            <div className="slider" key={imageEntry}>
+              <img src={imageEntry.image} alt="image" />
+              <h1 className="cHText">{imageEntry.title}</h1>
+              <p className="cPText">{imageEntry.sub_text}</p>
             </div>
           );
         })}

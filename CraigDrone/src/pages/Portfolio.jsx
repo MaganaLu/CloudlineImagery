@@ -43,6 +43,22 @@ const Portfolio = () => {
 
     getGolfCourseEntries();
 
+    const urlHash = window.location.hash;
+    console.log("urlHash: ", urlHash);
+    if (urlHash.length) {
+      const element = document.getElementById(urlHash);
+      if (element) {
+        setTimeout(function () {
+        element.scrollIntoView({
+          behavior:"smooth",
+          block: "start",
+        });
+      },250);
+      }
+
+      console.log("element: ", element);
+    }
+
     return () => {
       ignore = true;
     };
@@ -54,7 +70,7 @@ const Portfolio = () => {
 
       <PageHeader image='../assets/NatureImage.jpg' hText="Portfolio" />
 
-      <h1>Golf Courses</h1>
+      <hr id='#Golf-Courses' className="hr-text" data-content="Golf Courses"/>
       <div className="portfolioCardContainer">
         {golfCourseEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title} className="ulPortfolio">
@@ -62,12 +78,11 @@ const Portfolio = () => {
           </ul>
         )}
       </div>
-
-      <h1>Real Estate</h1>
+      <hr id='#Real-Estate' className="hr-text" data-content="Real Estate"/>
       <div className="portfolioCardContainer">
         {realEstateEntries.map(portfolioEntry =>
-          <ul key={portfolioEntry.title}  className="ulPortfolio">
-            <PortfolioCardComponent  description={portfolioEntry.description} video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
+          <ul key={portfolioEntry.title} className="ulPortfolio">
+            <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
         )}
       </div>
