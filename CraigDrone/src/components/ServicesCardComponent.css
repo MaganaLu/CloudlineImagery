@@ -94,6 +94,7 @@ article {
   *::before,
   *::after {
     box-sizing: border-box;
+    padding-inline-start:0px;
   }
   
   
