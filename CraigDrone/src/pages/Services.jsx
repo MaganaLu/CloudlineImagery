@@ -68,7 +68,7 @@ const Services = () => {
       <div className='ServicesCardContainer'>
 
         {services.map(service =>
-          <ul onClick={() => navigateToPortfolioSection(service.title)} key={service.title}>
+          <ul style={{paddingInlineStart:'0px'}} onClick={() => navigateToPortfolioSection(service.title)} key={service.title}>
             <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.image} />
 
           </ul>
