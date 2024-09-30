@@ -18,7 +18,7 @@ body {
   justify-content: center;
   height: 100%;
 
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   
@@ -33,7 +33,7 @@ body {
 
 .navbar {
   height: 60px;
-  background-color: #FAF9F6;
+  background-color: #cecece;
   position: sticky;
   top: 10px;
   z-index: 10;
@@ -83,7 +83,7 @@ body {
 }
 
 .nav-elements ul a.active {
-  color: #466dbb;
+  color: #1c4fb4;
   font-weight: 500;
   position: relative;
 }
@@ -116,7 +116,7 @@ body {
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: #FAF9F6;
+    background-color: #cecece;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(90px);

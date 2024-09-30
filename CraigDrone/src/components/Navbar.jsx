@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import placeholderLogo from '../assets/placeholderLogo.png';
 import droneLog from '../assets/DroneLogo.svg';
 import HamburgerMenu from '../assets/HamburgerMenu.svg';
+import logoWords from '../assets/LogoWords.svg';
 
 import './Navbar.css'
 
