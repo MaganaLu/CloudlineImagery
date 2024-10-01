@@ -11,6 +11,7 @@ import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Services from './pages/Services.jsx';
+import Footer from './components/Footer.jsx';
 
 
 const App = () => {
@@ -26,23 +27,7 @@ const App = () => {
             </Routes>
          </div>
 
-         <footer>
-                <h3>
-                    Drone Company
-                </h3>
-                <h4>
-                    Contact us now!
-                </h4>
-                <h4>
-                    Email here
-                </h4>
-                <h4>
-                    Phone number here
-                </h4>
-                <h4>
-                    maybe: social media
-                </h4>
-            </footer>
+         <Footer/>
 
        </Router>
     );

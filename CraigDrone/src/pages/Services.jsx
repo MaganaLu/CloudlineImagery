@@ -60,7 +60,7 @@ const Services = () => {
       <div className='ServicesContainer'>
         <h1>The Drone Services you Need, Whatever the Project!</h1>
         <button onClick={handleGoToContact}>Book Us Now!</button>
-        <p>You can get exactly the aerial media you need regardless of your project requirements. That’s because at Sky Solutions NW we offer a variety of high-quality drone services.</p>
+        <p>You can get exactly the aerial media you need regardless of your project requirements. That’s because at Cloudline Imagery we offer a variety of high-quality drone services.</p>
         <p>We are experts in the taking and editing of both photography and videography. Here’s a list of our most popular services.</p>
         <p> Contact us if you need something not listed here!</p>
       </div>

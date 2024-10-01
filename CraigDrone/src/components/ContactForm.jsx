@@ -13,8 +13,8 @@ const ContactForm = () => {
     return (
         <>
         <h2 className="h2Contact">Book a Shoot Now, Contact us using the form below or call (xxx)xxx-xxxx </h2>
-            <form ref={contactForm}>
-                <input name="name" type="text" className="feedback-input" placeholder="Name" />
+            <form style={{padding:"10px"}} ref={contactForm}>
+                <input   name="name" type="text" className="feedback-input" placeholder="Name" />
                 <input name="phoneNumber" type="tel" className="feedback-input" placeholder="Phone Number (optional)" />
                 <textarea name="text" className="feedback-input" placeholder="Got a question? Place it here!"></textarea>
                 <input type="submit" value="SUBMIT" onClick={handleClickEvent} />

@@ -1,5 +1,6 @@
 import ContactForm from "../components/ContactForm";
 import PageHeader from "../components/PageHeader";
+import ContactWeb3 from "../components/ContactWeb3Form";
 import './Contact.css';
 
 const Contact = () => {
@@ -7,8 +8,7 @@ const Contact = () => {
     <>
       <PageHeader hText="Contact" />
       
-      <ContactForm />
-
+      <ContactWeb3/>
       
     </>
   )

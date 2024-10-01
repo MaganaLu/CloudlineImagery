@@ -15,6 +15,11 @@
 
 .ServicesHeader{
     height: fit-content;
-    background-image: url('../assets/GradientWallpaperLines.png');
+    background-image: url('../assets/PageHeaderImage.jpg');
     height: 250px;
+    
+    background-repeat: no-repeat;
+
+  background-size: 100% 150%;
+    
 }

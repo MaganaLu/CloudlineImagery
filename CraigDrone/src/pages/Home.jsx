@@ -3,7 +3,7 @@ import colorWaves from '../assets/colorWaves.svg';
 import FlowChart from '../assets/FlowChart.svg';
 
 import HomeCarousel from '../components/HomeCarousel';
-import ContactForm from '../components/ContactForm';
+import ContactFormWeb3 from '../components/ContactWeb3Form.jsx';
 
 import { useNavigate } from "react-router-dom";
 
@@ -109,7 +109,7 @@ const Home = () => {
             </div>
 
             <div id="ContactSection">
-                <ContactForm />
+                <ContactFormWeb3 />
             </div>
 
 

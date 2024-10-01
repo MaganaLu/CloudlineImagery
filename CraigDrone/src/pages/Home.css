@@ -126,3 +126,7 @@ Button:hover {
 footer{
     text-align: center;
 }
+
+.react-multiple-carousel__arrow{
+    z-index: 1;
+}
