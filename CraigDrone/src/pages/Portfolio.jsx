@@ -10,6 +10,11 @@ const Portfolio = () => {
   const [golfCourseEntries, setGolfCourseEntries] = useState([]);
   const [realEstateEntries, setRealEstateEntries] = useState([]);
 
+  //constrcution , event coverage, other
+  const [constructionEntries, setConstructionEntries] = useState([]);
+  const [eventEntries, setEventEntries] = useState([]);
+  const [otherEntries, setOtherEntries] = useState([]);
+
   useEffect(() => {
     let ignore = false;
 
@@ -17,12 +22,24 @@ const Portfolio = () => {
       setGolfCourseEntries([]);
       setRealEstateEntries([]);
 
+      setConstructionEntries([]);
+      setEventEntries([]);
+      setOtherEntries([]);
+
       const collection_ref = collection(db, "portfolio_entries");
       const golfCoursesQuery = query(collection_ref, where("type", "==", "Golf Courses"));
       const realEstateQuery = query(collection_ref, where("type", "==", "Real Estate"));
 
+      const constructionQuery = query(collection_ref, where("type", "==", "Construction"));
+      const eventQuery = query(collection_ref, where("type", "==", "Events"));
+      const otherQuery = query(collection_ref, where("type", "==", "Other"));
+
       const golfCoursesQuerySnapshot = await getDocs(golfCoursesQuery);
       const realEstateQuerySnapshot = await getDocs(realEstateQuery);
+
+      const constructionQuerySnapshot = await getDocs(constructionQuery);
+      const eventQuerySnapshot = await getDocs(eventQuery);
+      const otherQuerySnapshot = await getDocs(otherQuery);
 
       golfCoursesQuerySnapshot.forEach((doc) => {
         if (!ignore) {
@@ -34,6 +51,25 @@ const Portfolio = () => {
       realEstateQuerySnapshot.forEach((doc) => {
         if (!ignore) {
           setRealEstateEntries(realEstateEntries => [...realEstateEntries, doc.data()]);
+        }
+      });
+      
+      
+      constructionQuerySnapshot.forEach((doc) => {
+        if (!ignore) {
+          setConstructionEntries(constructionEntries => [...constructionEntries, doc.data()]);
+        }
+      });
+      
+      eventQuerySnapshot.forEach((doc) => {
+        if (!ignore) {
+          setEventEntries(eventEntries => [...eventEntries, doc.data()]);
+        }
+      });
+      
+      otherQuerySnapshot.forEach((doc) => {
+        if (!ignore) {
+          setOtherEntries(otherEntries => [...otherEntries, doc.data()]);
         }
       });
 
@@ -90,7 +126,7 @@ const Portfolio = () => {
 
       <hr id='#Construction' className="hr-text" data-content="Construction"/>
       <div className="portfolioCardContainer">
-        {realEstateEntries.map(portfolioEntry =>
+        {constructionEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title} className="ulPortfolio">
             <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
@@ -99,7 +135,7 @@ const Portfolio = () => {
 
       <hr id='#Event-Coverage' className="hr-text" data-content="Event Coverage"/>
       <div className="portfolioCardContainer">
-        {realEstateEntries.map(portfolioEntry =>
+        {eventEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title} className="ulPortfolio">
             <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
@@ -108,7 +144,7 @@ const Portfolio = () => {
 
       <hr id='#Other-Services' className="hr-text" data-content="Other Services"/>
       <div className="portfolioCardContainer">
-        {realEstateEntries.map(portfolioEntry =>
+        {otherEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title} className="ulPortfolio">
             <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
