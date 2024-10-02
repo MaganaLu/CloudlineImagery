@@ -106,7 +106,7 @@ const Portfolio = () => {
         )}
       </div>
 
-      <hr id='#Other' className="hr-text" data-content="Other Services"/>
+      <hr id='#Other-Services' className="hr-text" data-content="Other Services"/>
       <div className="portfolioCardContainer">
         {realEstateEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title} className="ulPortfolio">
