@@ -12,7 +12,9 @@ const ServicesCardComponent = (props) => {
                         <div class="article-body">
                             <h2>{props.title}</h2>
                             <p style={{color:"black"}}>{props.subtext}</p>
+                            <div className='seeMore'> {"see more"} &#8594;</div>
                         </div>
+                        
                     </div>
                 </article>
             </section>

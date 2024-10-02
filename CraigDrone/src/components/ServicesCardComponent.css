@@ -9,6 +9,30 @@ article {
     transform-origin: center;
     overflow: hidden;
   }
+
+  .seeMore{
+    color: black;
+    text-align: right;
+  }
+
+  .seeMore:hover{
+    color: #28666e;
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+    
+  }
+
+  @keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(10px, 0);
+    }
+  }
+  
   
   article a::after {
     position: absolute;
@@ -83,6 +107,7 @@ article {
     --link-icon-translate: 0;
     --link-icon-opacity: 1;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    cursor: pointer;
   }
   
   
