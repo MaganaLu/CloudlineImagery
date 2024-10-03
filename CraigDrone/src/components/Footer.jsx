@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
 
                 <div class="row">
-                    <p>{"Conatact Us: 253)389-8009"}</p>
+                    <p>{"Contact Us: 253)389-8009"}</p>
                     <p>{"CraigLogerwell@CloudlineImagery.com"}</p>
                 </div>
 

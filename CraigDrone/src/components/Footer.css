@@ -1,5 +1,5 @@
 .footer {
-    background: #000;
+    background: #00000000;
     font-family: 'Play', sans-serif;
     text-align: center;
 }
@@ -39,18 +39,4 @@
 .footer .row a i {
     font-size: 2em;
 
-}
-
-@media (max-width:720px) {
-    .footer {
-
-    }
-
-    .footer .row ul li {
-
-    }
-
-    .footer .row a i {
-
-    }
 }

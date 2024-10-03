@@ -36,7 +36,7 @@
 
 .article-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgb(68, 0, 255), 0 10px 10px rgb(82, 12, 245);
 }
 
 .article-card img {

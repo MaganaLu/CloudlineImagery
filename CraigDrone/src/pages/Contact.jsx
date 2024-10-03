@@ -6,10 +6,13 @@ import './Contact.css';
 const Contact = () => {
   return (
     <>
-      <PageHeader hText="Contact" />
-      
-      <ContactWeb3/>
-      
+      <div class="background">
+        <div></div>
+        <div></div>
+      </div>
+        <PageHeader hText="Contact" />
+
+        <ContactWeb3 />
     </>
   )
 };
