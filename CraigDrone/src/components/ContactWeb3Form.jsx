@@ -21,7 +21,6 @@ export default function Contact() {
             setResult("Submitted Successfully");
             event.target.reset();
         } else {
-            console.log("Error", data);
             setResult(data.message);
         }
     };

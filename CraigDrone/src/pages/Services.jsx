@@ -36,17 +36,17 @@ const Services = () => {
               setServices(services => [...services, doc.data()])
             }
           })
-          console.log("stuff", services)
+          
         })
         .catch(err => {
-          console.log(err.message)
+         
         })
     }
 
     getServices();
 
     return () => {
-      console.log('i fire once');
+      
       ignore = true;
     };
 

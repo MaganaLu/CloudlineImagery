@@ -77,17 +77,15 @@ const HomeCarousel = () => {
                         setImages(images => [...images, doc.data()])
                       }
                   })
-                  console.log("stuff", images)
               })
               .catch(err => {
-                  console.log(err.message)
+                  
               })
       }
 
       getImages();
 
       return () => {
-          console.log('i fire once');
           ignore = true;
       };
 

@@ -8,20 +8,20 @@ const Footer = () => {
     return (
 
         <footer>
-            <div class="footer">
-                <div class="row">
+            <div className="footer">
+                <div className="row">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/"><img src={youtubeIcon}/></a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61565934830066"><img src={facebookIcon}/></a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61565934830066"><img src={instagramIcon}/></a>
 
                 </div>
 
-                <div class="row">
+                <div className="row">
                     <p>{"Contact Us: 253)389-8009"}</p>
                     <p>{"CraigLogerwell@CloudlineImagery.com"}</p>
                 </div>
 
-                <div class="row">
+                <div className="row">
                     CloudLine Imagery LLC || Website Designed By: Web Frontier Solutions
                 </div>
             </div>

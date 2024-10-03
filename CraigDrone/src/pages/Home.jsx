@@ -34,17 +34,17 @@ const Home = () => {
                             setTodos(todos => [...todos, doc.data()])
                         }
                     })
-                    console.log("stuff", todos)
+                    
                 })
                 .catch(err => {
-                    console.log(err.message)
+                    
                 })
         }
 
         getTodos();
 
         return () => {
-            console.log('i fire once');
+            
             ignore = true;
         };
 

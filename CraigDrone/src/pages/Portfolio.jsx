@@ -80,7 +80,7 @@ const Portfolio = () => {
     getGolfCourseEntries();
 
     const urlHash = window.location.hash;
-    console.log("urlHash: ", urlHash);
+    
     if (urlHash.length) {
       const element = document.getElementById(urlHash);
       if (element) {
@@ -92,7 +92,7 @@ const Portfolio = () => {
       },250);
       }
 
-      console.log("element: ", element);
+      
     }
 
     return () => {

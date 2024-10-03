@@ -7,7 +7,7 @@ const PortfolioCardComponent = (props) => {
     const isIframe = () => {
         if ((props.video).includes("iframe")) {
             let videoString = (props.video).replace("play", "embed"); 
-            console.log((props.video).toString() + "?autoplay=false&loop=true&muted=false&preload=true&responsive=true");
+            
             return (<iframe id='portfolioVideoPlayer' src={videoString + "?autoplay=false&loop=true&muted=false&preload=true&responsive=true"} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
         }
         return (<img id='portfolioVideoPlayer' alt="" src={props.video}></img>);
